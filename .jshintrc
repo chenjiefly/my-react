@@ -26,7 +26,7 @@
   // true-- 代码字符串禁止单引号双引号混用
   // "single"--只允许单引号
   // "double"--只允许双引号
-  "quotmark": true,
+  "quotmark": false,
 
   // 检查变量重复定义
   // "inner" 只检查是否在相同的作用域重复定义
