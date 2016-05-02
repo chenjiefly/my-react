@@ -1,79 +1,68 @@
 var path = require('path');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var HtmlwebpackPlugin = require('html-webpack-plugin');
+// var ExtractTextPlugin = require("extract-text-webpack-plugin");
+// var HtmlwebpackPlugin = require('html-webpack-plugin');
 
 // __dirname为当前开发文件所在路径
-var ROOT_PATH = path.resolve(__dirname);
-var APP_PATH = path.resolve(ROOT_PATH, 'app');
-var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
+// var ROOT_PATH = path.resolve(__dirname);
+// var DIST_PATH = path.resolve(ROOT_PATH, 'dist');
+
 
 
 module.exports = {
-  entry: {
-    app: path.resolve(APP_PATH, 'index.jsx')
-  },
-  output: {
-    path: BUILD_PATH,
-    filename: 'bundle.js'
-  },
-  //enable dev source map
-  devtool: 'eval-source-map',
-  //enable dev server
-  devServer: {
-    historyApiFallback: true,
-    hot: true,
-    inline: true,
-    progress: true
-  },
-  //babel重要的loader在这里
-  module: {
-    loaders: [
-      {
-        test: /\.css$/, 
-        loader: 'style!css'
-      },
-      {
-        test: /\.js$/, 
-        loader: 'babel',
-        exclude: /node_modules/
-      },
-      {
-        test: /\.(jpg|png)$/, 
-        loader: 'url',
-        query: {
-          limit: 8192
-        }
-      },
-      {
-        test: /\.scss$/, 
-        loader: 'style!css!sass'
-      },
-      {
-        test: /\.jsx?$/,
-        loader: 'babel',
-        include: APP_PATH,
-        query: {
-          //添加两个presents 使用这两种presets处理js或者jsx文件
-          presets: ['es2015', 'react']
-        }
-      }
-    ]
-  },
-  resolve: {
-    alias: {
-
+    entry: path.resolve(__dirname, './js/main.js'),
+    output: {
+        path: path.resolve(__dirname, './dist'),
+        filename: 'index.js'  //'[name].js'
     },
-    extensions: {
-      
-    }
-  },
-  externals: {  // 在页面中单独加载的第三方库变量
-    // jquery: 'jQuery'
-  },
-  plugins: [
-    new HtmlwebpackPlugin({
-      title: 'My first react app'
-    }),
-    new ExtractTextPlugin("[name].css")
-  ]
+    // devtool: 'source-map',  //enable dev source map
+    
+    // devServer: {  // enable dev server
+    //     historyApiFallback: true,
+    //     hot: true,
+    //     inline: true,
+    //     port: 7777,
+    //     progress: true
+    // },
+    module: {
+        loaders: [{
+            test: /\.css$/,
+            loader: 'style!css'
+        }, {
+            test: /\.(jpg|png)$/,
+            loader: 'url',
+            query: {
+                limit: 8192
+            }
+        }, {
+            test: /\.scss$/,
+            loader: 'style!css!sass'
+        }, {
+            test: /\.js$/,
+            loader: 'babel',
+            exclude: /node_modules/
+        }, {
+            test: /\.jsx?$/,
+            loader: 'babel',
+            // include: ROOT_PATH,
+        }]
+    },
+    resolve: {
+        alias: { // 路径重映射配置
+
+        },
+        extensions: ['', '.js', '.jsx']  // 把jsx这种扩展名添加进去，这样就可以在js中import加载jsx这种扩展名的脚本
+                                         // 比如 Hello.jsx 这样的文件就可以直接用 require(./Hello) 引用
+    },
+    externals: { // 在页面中单独加载的第三方库变量
+        // jquery: 'jQuery'
+    },
+    // babel: {
+    //     presets: ['es2015', 'react']
+    // },
+    plugins: [
+        // new HtmlwebpackPlugin({
+        //     title: 'my react'
+        // }),
+        // new ExtractTextPlugin("[name].css")
+    ]
 };

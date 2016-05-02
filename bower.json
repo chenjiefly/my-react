@@ -17,11 +17,12 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "js/lib",
+    "lib",
     "test",
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.2.3"
+    "jquery": "~2.2.3",
+    "react": "~15.0.1"
   }
 }
