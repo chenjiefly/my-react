@@ -4,9 +4,8 @@ class App extends React.Component {
    render() {
       return (
          <div>
-            Hello World!!!
-            <br/>
-            欢迎来到菜鸟教程学习！！！
+            Hello World!!!<br />
+            这是第一个React例子！！
          </div>
       );
    }
