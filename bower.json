@@ -1,0 +1,22 @@
+{
+  "name": "my-react",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "chenjiefly <chenjiefly@163.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/chenjiefly/my-react",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.3"
+  }
+}

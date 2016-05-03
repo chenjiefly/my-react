@@ -34,7 +34,7 @@ var config = {
     },
     // 声明挂在window上的的第三方库变量
     externals: {
-        // jquery: 'jQuery'
+        jquery: 'jQuery'
     }
 };
 
