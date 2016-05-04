@@ -19,8 +19,8 @@ gulp.task('watch', () => {
 /****************** 代码压缩任务 ******************/
 gulp.task('minify', () => {
   gulp.src('dist/index.js')
-    .pipe(uglify())
-    .pipe(gulp.dest('dist/index.min.js'));
+      .pipe(uglify())
+      .pipe(gulp.dest('dist/index.min.js'));
 });
 
 /****************** 清理输出目录 ******************/

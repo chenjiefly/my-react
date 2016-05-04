@@ -31,7 +31,6 @@
         "eqeqeq": 1,  // === and !==
         "linebreak-style": [1, "unix"],  // 采用unix环境的换行符
         "semi": [1, "always"],  // 分号检查
-        "no-unused-vars": 1,  // 不允许未使用的变量
         "no-extra-semi": 1,  // 不允许多余分号
         "no-empty": 1,  // 不允许空语句块
         "no-empty-function": 1,  // 不允许空函数体
@@ -42,6 +41,7 @@
 
         // 未开启
         "quotes": [0, "single"],
+        "no-unused-vars": 0,  // 不允许未使用的变量
         "no-var": 0  // 使用let或const代替
     },
     "plugins": [
