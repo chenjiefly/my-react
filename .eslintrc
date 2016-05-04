@@ -1,24 +1,48 @@
 {
-    "env": {
+    "env": {  // 环境：保证预定义变量不报错
         "browser": true,
-        "es6": true
+        "es6": true,  // enable all ECMAScript 6 features except for modules
+        "node": true,
+        "jquery": true
     },
     "parserOptions": {
-        "sourceType": "module",
+        "sourceType": "module",  // script为默认模式，module为ECMAScript module模式
         "ecmaFeatures": {
             "jsx": true
         }
     },
     "globals": {
-        "angular": true
+        "$": true
     },
-    "rules": {
+    "rules": {  // off:0, warn:1, error:2
+        // 错误
         "camelcase": 2,
-        "curly": 2,
-        "brace-style": [2, "1tbs"],
+        "curly": 2,   // if、while等块语句必须带括号
+        "brace-style": [2, "1tbs"],  // 上述块语句括号必须换行
+        "no-duplicate-imports": 2,  // 不允许相同模块引用
+        "no-duplicate-case": 2,  // 不允许相同的case
+        "no-cond-assign": 2,  // 条件语句中不允许赋值运算符
+        "no-dupe-keys": 2,  // 不允许键名重复
+        "no-undef": 2,  // 未定义变量
+        "no-use-before-define": 2,  // 不允许变量未定义先使用
+        "no-const-assign": 2,  // 不允许常量赋值
+
+        // 警告
+        "eqeqeq": 1,  // === and !==
+        "linebreak-style": [1, "unix"],  // 采用unix环境的换行符
+        "semi": [1, "always"],  // 分号检查
+        "no-unused-vars": 1,  // 不允许未使用的变量
+        "no-extra-semi": 1,  // 不允许多余分号
+        "no-empty": 1,  // 不允许空语句块
+        "no-empty-function": 1,  // 不允许空函数体
+        "no-unreachable": 1,  // return, throw, continue 和 break之后的语句无法到达
+        "no-alert": 1,  // 出现alert, confirm, and prompt
+        "no-debugger": 1,
+        "no-console": 1,
+
+        // 未开启
         "quotes": [0, "single"],
-        "semi": [2, "always"],
-        "linebreak-style": [2, "unix"]
+        "no-var": 0  // 使用let或const代替
     },
     "plugins": [
         "react"
