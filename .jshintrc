@@ -39,7 +39,7 @@
   "undef": true,
 
   // 变量未使用
-  "unused": true,
+  "unused": false,
 
   /************* 宽松选项 *************/
 

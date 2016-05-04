@@ -1,12 +1,9 @@
-// import React from 'react';
+import React from 'react';  // 这里的React一定要依赖，webpack编译后会在本文件中用到
 import ReactDOM from 'react-dom';
-// import $ from 'jquery';
 
-import app from './components/app.jsx';
+import App from './components/app.jsx';
 
 ReactDOM.render(
-    /* jshint ignore:start */
-    <app />,
-    /* jshint ignore:end */
+    <App />,
     document.getElementById('app')
 );
