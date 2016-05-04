@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import App from './components/app.jsx';
 
 ReactDOM.render(
-    <App />,
+    <div className="container">
+        <App />
+    </div>,
     document.getElementById('app')
 );
