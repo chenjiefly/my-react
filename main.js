@@ -1,10 +1,12 @@
-import React from 'react';
+// import React from 'react';
 import ReactDOM from 'react-dom';
-import $ from 'jquery';
+// import $ from 'jquery';
 
-import App from './components/app.jsx';
+import app from './components/app.jsx';
 
 ReactDOM.render(
-    <App />, 
+    /* jshint ignore:start */
+    <app />,
+    /* jshint ignore:end */
     document.getElementById('app')
 );
