@@ -5,6 +5,7 @@ import App from './components/app.jsx';
 
 ReactDOM.render(
     <div className="container">
+        {/*注释...*/}
         <App />
     </div>,
     document.getElementById('app')
