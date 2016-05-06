@@ -3,10 +3,17 @@ import ReactDOM from 'react-dom';
 
 import App from './components/app.jsx';
 
+
+// let nameList = [
+//     '张三',
+//     '李四',
+//     '王五'
+// ];
+
 ReactDOM.render(
     <div className="container">
         {/*注释...*/}
-        <App />
+        <App nameList="['张三', '李四', '王五']" />
     </div>,
     document.getElementById('app')
 );
